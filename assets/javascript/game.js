@@ -125,7 +125,7 @@ function changePicture(image) {
 }
 
 function initialize() {
-	guesses = 10;
+	guesses = 6;
 	end = false;
 	pickWord();
 	printHidden();

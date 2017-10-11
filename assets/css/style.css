@@ -24,7 +24,7 @@
 	border-radius: .25rem;
 	position: fixed;
 	top: 12rem;
-	right: calc(50vw - 12rem);
+	right: calc(50% - 12rem);
 	margin: auto;
 	padding: 1rem;
 }
@@ -59,4 +59,8 @@
 
 h1, h2, h3, h4, h5, h6, p, a {
 	font-family: 'Press Start 2P', cursive;
+}
+
+body {
+	min-width: 420px;
 }
