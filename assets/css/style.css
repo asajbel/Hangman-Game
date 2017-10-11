@@ -17,9 +17,16 @@
 }
 
 .overlay {
+	display: flex;
+	width: 24rem;
 	margin-bottom: 1rem;
 	z-index: 5;
 	border-radius: .25rem;
+	position: fixed;
+	top: 12rem;
+	right: calc(50vw - 12rem);
+	margin: auto;
+	padding: 1rem;
 }
 
 .card {

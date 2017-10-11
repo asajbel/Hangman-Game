@@ -1,6 +1,6 @@
 var guesses = 10;
 var tried = [];
-var words = ["Mario", "Sonic", "Master Chief", "Lara Croft", "Donkey Kong", "Jump Man", "Crash Bandicoot", "Bubsy", "Opa-Opa", "Link", "Samus", "Ryu", "Sub-Zero", "Ken Masters", "Scorpion", "Megaman", "Pac-man", "Pikachu", "Alex Kidd", "Heihachi", "Mishima", "Cloud Strife", "Chocobo", "Moogle", "Gex", "Q-Bert", "Ivy Valentime", "Terry Bogard", "Kyo Kusanagi", "Haohmaru"];
+var words = ["Mario", "Sonic", "Jack Frost", "Master Chief", "Lara Croft", "Donkey Kong", "Jump Man", "Crash Bandicoot", "Bubsy", "Opa-Opa", "Link", "Samus", "Ryu", "Sub-Zero", "Ken Masters", "Scorpion", "Megaman", "Pac-man", "Pikachu", "Alex Kidd", "Heihachi", "Mishima", "Cloud Strife", "Chocobo", "Moogle", "Gex", "Q-Bert", "Ivy Valentime", "Abe", "Terry Bogard", "Kyo Kusanagi", "Haohmaru"];
 var word;
 var hidden;
 var end = false;
