@@ -1,3 +1,55 @@
+/*Press Start 2P font font-family: 'Press Start 2P', cursive;*/
 .text-space {
 	letter-spacing: 12px;
+}
+
+.hangmanPic {
+	max-width: 240px;
+}
+
+.resetBtn {
+	position: absolute;
+	bottom: 1.5rem;
+}
+
+.entryCol {
+	padding-bottom: 3.5rem;
+}
+
+.overlay {
+	margin-bottom: 1rem;
+	z-index: 5;
+	border-radius: .25rem;
+}
+
+.card {
+	border-width: 4px;
+}
+
+.bg-noise {
+	background-image: url("../images/noise_lines_@2X.png");
+}
+
+.bg-px {
+	background-image: url("../images/px_by_Gre3g_@2X.png");
+}
+
+.bg-dots {
+	background-image: url("../images/subtle_dots_@2X.png");
+}
+
+.bg-shinedots {
+	background-image: url("../images/shinedotted_@2X.png");
+}
+
+.bg-triangular {
+	background-image: url("../images/triangular_@2X.png");
+}
+
+#hidden {
+	display: none;
+}
+
+h1, h2, h3, h4, h5, h6, p, a {
+	font-family: 'Press Start 2P', cursive;
 }

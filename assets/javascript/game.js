@@ -1,12 +1,17 @@
 var guesses = 10;
 var tried = [];
-var words = ["Mario", "Sonic", "Master Chief", "Lara Croft", "Donkey Kong", "Jump Man", "Crash Bandicoot", "Bubsy", "Opa-Opa", "Link", "Samus", "Ryu", "Sub-Zero", "Ken Masters", "Scorpion", "Megaman", "Pac-man", "Pikachu", "Alex Kidd", "Heihachi", "Mishima", "Cloud Strife", "Chocobo", "Moogle", "Gex"];
+var words = ["Mario", "Sonic", "Master Chief", "Lara Croft", "Donkey Kong", "Jump Man", "Crash Bandicoot", "Bubsy", "Opa-Opa", "Link", "Samus", "Ryu", "Sub-Zero", "Ken Masters", "Scorpion", "Megaman", "Pac-man", "Pikachu", "Alex Kidd", "Heihachi", "Mishima", "Cloud Strife", "Chocobo", "Moogle", "Gex", "Q-Bert", "Ivy Valentime", "Terry Bogard", "Kyo Kusanagi", "Haohmaru"];
 var word;
 var hidden;
+var end = false;
 
 initialize();
 
 document.onkeyup = function(event) {
+	if (end) {
+		initialize();
+		return 0;
+	}
 	var letter;
 	console.log(event.keyCode);
 	if(event.keyCode > 64 && event.keyCode < 91) {
@@ -20,13 +25,26 @@ document.onkeyup = function(event) {
 };
 
 function win() {
-	alert("You Won");
-	initialize();
+	console.log("You Won");
+	displayEnd("correct");
+	end = true;
 }
 
 function lose() {
-	alert("Out of guesses");
-	initialize();
+	console.log("Out of guesses");
+	displayEnd("wrong");
+	end = true;
+}
+
+function displayEnd(messageId) {
+	document.getElementById("hidden").style.display = "block";
+	document.getElementById(messageId).style.display = "inline";
+}
+
+function hideEnd() {
+	document.getElementById("hidden").style.display = "none";
+	document.getElementById("correct").style.display = "none";
+	document.getElementById("wrong").style.display = "none";
 }
 
 function matchWord(letter) {
@@ -54,6 +72,7 @@ function notTried(letter) {
 function printTry(letter) {
 	tried.push(letter);
 	guesses--;
+	changePicture("hangman-" + guesses + ".png");
 	printRemains();
 	print(tried, "guessed");
 	if (guesses == 0) lose();
@@ -93,20 +112,27 @@ function printHidden() {
 }
 
 function resetGuesses() {
-	print("Nothing guessed yet.", "guessed");
+	tried = [];
+	print("No wrong letters yet.", "guessed");
 }
 
 function printRemains() {
 	print(guesses,"remain")
 }
 
+function changePicture(image) {
+	document.getElementById("pic").src = "assets/images/"+image;
+}
+
 function initialize() {
 	guesses = 10;
-	tried = [];
+	end = false;
 	pickWord();
 	printHidden();
 	resetGuesses();
 	printRemains();
+	changePicture("hangman-"+guesses+".png");
+	hideEnd();
 }
 
 function print (text, id) {
